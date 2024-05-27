@@ -1,0 +1,1039 @@
+package view.funcionarios;
+
+import com.formdev.flatlaf.FlatLightLaf;
+import com.toedter.calendar.JDateChooser;
+import evento.otro.TextoMayuscula;
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import model.Servicios;
+import view.componentes.BTN;
+
+public class VRegistrarFuncionario extends javax.swing.JDialog {
+
+    private int IDPersona;
+
+    public VRegistrarFuncionario(JFrame v, boolean modal) {
+        super(v, modal);
+
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Error al inicializar FlatLaf");
+        }
+        initComponents();
+        mostrarServicios();
+        setIconImage(new ImageIcon(getClass().getResource("/view/img/peda.png")).getImage());
+        setLocationRelativeTo(this);
+
+    }
+    
+    public VRegistrarFuncionario(JDialog v, boolean modal) {
+        super(v, modal);
+
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception ex) {
+            System.err.println("Error al inicializar FlatLaf");
+        }
+        initComponents();
+        mostrarServicios();
+        setIconImage(new ImageIcon(getClass().getResource("/view/img/peda.png")).getImage());
+        setLocationRelativeTo(this);
+
+    }
+
+    private void mostrarServicios() {
+
+        Servicio.removeAllItems();
+
+        Servicios s = new Servicios();
+        for (int i = 0; i < s.TotalServicioRegistrado(""); i++) {
+
+            Servicio.addItem(s.Listado()[i]);
+
+        }
+
+    }
+
+    public JLabel getCedula() {
+        return cedula;
+    }
+
+    public JLabel getCorreo() {
+        return correo;
+    }
+
+    public JTextArea getDireccion() {
+        return direccion;
+    }
+
+    public JLabel getEstado() {
+        return estado;
+    }
+
+    public JLabel getEstadocivil() {
+        return estadocivil;
+    }
+
+    public JLabel getFechanacimiento() {
+        return fechanacimiento;
+    }
+
+    public JLabel getFoto() {
+        return foto;
+    }
+
+    public JLabel getGenero() {
+        return genero;
+    }
+
+    public JLabel getLugarnacimiento() {
+        return lugarnacimiento;
+    }
+
+    public JLabel getMunicipio() {
+        return municipio;
+    }
+
+    public JLabel getNivelacademico() {
+        return nivelacademico;
+    }
+
+    public JLabel getOtrotelefono() {
+        return otrotelefono;
+    }
+
+    public JLabel getOtrotitulo() {
+        return otrotitulo;
+    }
+
+    public JLabel getParroquia() {
+        return parroquia;
+    }
+
+    public JLabel getPrimerapellido() {
+        return primerapellido;
+    }
+
+    public JLabel getPrimernombre() {
+        return primernombre;
+    }
+
+    public JLabel getSegundoapellido() {
+        return segundoapellido;
+    }
+
+    public JLabel getSegundonombre() {
+        return segundonombre;
+    }
+
+    public JLabel getTelefono() {
+        return telefono;
+    }
+
+    public JLabel getTituloobtenido() {
+        return tituloobtenido;
+    }
+
+    public JTabbedPane getjTabbedPane1() {
+        return jTabbedPane1;
+    }
+
+    public void setIDPersona(int IDPersona) {
+        this.IDPersona = IDPersona;
+    }
+
+    public JLabel getFoto2() {
+        return foto2;
+    }
+
+    public JLabel getFoto3() {
+        return foto3;
+    }
+
+    public JComboBox<String> getCodicion() {
+        return Codicion;
+    }
+
+    public JTextField getCodigoCarnet() {
+        return CodigoCarnet;
+    }
+
+    public JDateChooser getFechaAscenso() {
+        return FechaAscenso;
+    }
+
+    public JDateChooser getFechaIngreso() {
+        return FechaIngreso;
+    }
+
+    public JTextField getBanco() {
+        return Banco;
+    }
+
+    public JTextField getNumeroCuenta() {
+        return NumeroCuenta;
+    }
+
+    public JComboBox<String> getRango() {
+        return Rango;
+    }
+
+    public JComboBox<String> getServicio() {
+        return Servicio;
+    }
+
+    public JTextField getTallaCamisa() {
+        return TallaCamisa;
+    }
+
+    public JTextField getTallaGorra() {
+        return TallaGorra;
+    }
+
+    public JTextField getTallaPantalon() {
+        return TallaPantalon;
+    }
+
+    public JTextField getTallaZapato() {
+        return TallaZapato;
+    }
+
+    public JComboBox<String> getMunicipioTrabajo() {
+        return MunicipioTrabajo;
+    }
+
+    public BTN getBTN_REGISTRAR() {
+        return BTN_REGISTRAR;
+    }
+
+    public int getIDPersona() {
+        return IDPersona;
+    }
+
+    public JComboBox<String> getEstatus() {
+        return estatus;
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        foto = new javax.swing.JLabel();
+        primernombre = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        segundonombre = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        primerapellido = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        segundoapellido = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        cedula = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        fechanacimiento = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        lugarnacimiento = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        estadocivil = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        genero = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        nivelacademico = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        tituloobtenido = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        otrotitulo = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        telefono = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        otrotelefono = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        correo = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        estado = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        municipio = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        parroquia = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        direccion = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        foto2 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
+        jLabel71 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel77 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel86 = new javax.swing.JLabel();
+        MunicipioTrabajo = new javax.swing.JComboBox<>();
+        TallaPantalon = new javax.swing.JTextField();
+        Rango = new javax.swing.JComboBox<>();
+        CodigoCarnet = new javax.swing.JTextField();
+        TallaZapato = new javax.swing.JTextField();
+        TallaGorra = new javax.swing.JTextField();
+        Codicion = new javax.swing.JComboBox<>();
+        TallaCamisa = new javax.swing.JTextField();
+        jLabel76 = new javax.swing.JLabel();
+        Servicio = new javax.swing.JComboBox<>();
+        FechaAscenso = new com.toedter.calendar.JDateChooser();
+        FechaIngreso = new com.toedter.calendar.JDateChooser();
+        jPanel4 = new javax.swing.JPanel();
+        foto3 = new javax.swing.JLabel();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        NumeroCuenta = new javax.swing.JTextField();
+        Banco = new javax.swing.JTextField();
+        jLabel143 = new javax.swing.JLabel();
+        estatus = new javax.swing.JComboBox<>();
+        salir = new javax.swing.JLabel();
+        BTN_REGISTRAR = new view.componentes.BTN();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("INFORMACIÓN");
+        setUndecorated(true);
+        setResizable(false);
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("REGISTRAR FUNCIONARIO");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 526, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 51));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 680, 10));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        foto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 160, 160));
+
+        primernombre.setBackground(new java.awt.Color(0, 0, 51));
+        primernombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        primernombre.setForeground(new java.awt.Color(102, 102, 102));
+        primernombre.setText("DIXSON");
+        jPanel2.add(primernombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 310, 20));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel4.setText("- PRIMER NOMBRE:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 20));
+
+        jLabel5.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel5.setOpaque(true);
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 490, 20));
+
+        segundonombre.setBackground(new java.awt.Color(0, 0, 51));
+        segundonombre.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        segundonombre.setForeground(new java.awt.Color(102, 102, 102));
+        segundonombre.setText("GABRIEL");
+        jPanel2.add(segundonombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 310, 20));
+
+        jLabel8.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel8.setText("- SEGUNDO NOMBRE:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 20));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel7.setOpaque(true);
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 490, 20));
+
+        primerapellido.setBackground(new java.awt.Color(0, 0, 51));
+        primerapellido.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        primerapellido.setForeground(new java.awt.Color(102, 102, 102));
+        primerapellido.setText("HOEPP");
+        jPanel2.add(primerapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 310, 20));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel11.setText("- PRIMER APELLIDO:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
+
+        jLabel9.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel9.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel9.setOpaque(true);
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 490, 20));
+
+        segundoapellido.setBackground(new java.awt.Color(0, 0, 51));
+        segundoapellido.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        segundoapellido.setForeground(new java.awt.Color(102, 102, 102));
+        segundoapellido.setText("MARCANO");
+        jPanel2.add(segundoapellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 310, 20));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel13.setText("- SEGUNDO APELLIDO:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel14.setOpaque(true);
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 490, 20));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel15.setText("- CÉDULA DE IDENTIDAD:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
+
+        cedula.setBackground(new java.awt.Color(0, 0, 51));
+        cedula.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        cedula.setForeground(new java.awt.Color(102, 102, 102));
+        cedula.setText("19402417");
+        jPanel2.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 310, 20));
+
+        jLabel17.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel17.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel17.setOpaque(true);
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 490, 20));
+
+        fechanacimiento.setBackground(new java.awt.Color(0, 0, 51));
+        fechanacimiento.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        fechanacimiento.setForeground(new java.awt.Color(102, 102, 102));
+        fechanacimiento.setText("08/04/1989");
+        jPanel2.add(fechanacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 310, 20));
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel19.setText("- FECHA DE NACIMIENTO:");
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
+
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel20.setOpaque(true);
+        jPanel2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 490, 20));
+
+        jLabel21.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel21.setText("- LUGAR DE NACIMIENTO:");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, 20));
+
+        lugarnacimiento.setBackground(new java.awt.Color(0, 0, 51));
+        lugarnacimiento.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        lugarnacimiento.setForeground(new java.awt.Color(102, 102, 102));
+        lugarnacimiento.setText("TUCUPITA");
+        jPanel2.add(lugarnacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 310, 20));
+
+        jLabel23.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel23.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel23.setOpaque(true);
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 490, 20));
+
+        jLabel24.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel24.setText("- ESTADO CIVIL:");
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
+
+        estadocivil.setBackground(new java.awt.Color(0, 0, 51));
+        estadocivil.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        estadocivil.setForeground(new java.awt.Color(102, 102, 102));
+        estadocivil.setText("SOLTERO(A)");
+        jPanel2.add(estadocivil, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 310, 20));
+
+        jLabel26.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel26.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel26.setOpaque(true);
+        jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 490, 20));
+
+        jLabel27.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel27.setText("- GENERO:");
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 20));
+
+        genero.setBackground(new java.awt.Color(0, 0, 51));
+        genero.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        genero.setForeground(new java.awt.Color(102, 102, 102));
+        genero.setText("M");
+        jPanel2.add(genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 310, 20));
+
+        jLabel29.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel29.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel29.setOpaque(true);
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 490, 20));
+
+        jLabel30.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel30.setText("- NIVEL ACADEMICO:");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 20));
+
+        nivelacademico.setBackground(new java.awt.Color(0, 0, 51));
+        nivelacademico.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        nivelacademico.setForeground(new java.awt.Color(102, 102, 102));
+        nivelacademico.setText("INGENIERO");
+        jPanel2.add(nivelacademico, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 310, 20));
+
+        jLabel32.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel32.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel32.setOpaque(true);
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 490, 20));
+
+        jLabel33.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel33.setText("- TITULO OBTENIDO:");
+        jPanel2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, 20));
+
+        tituloobtenido.setBackground(new java.awt.Color(0, 0, 51));
+        tituloobtenido.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tituloobtenido.setForeground(new java.awt.Color(102, 102, 102));
+        tituloobtenido.setText("INGENIERO EN INFORMATICA");
+        jPanel2.add(tituloobtenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 310, 20));
+
+        jLabel35.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel35.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel35.setOpaque(true);
+        jPanel2.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 490, 20));
+
+        jLabel36.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel36.setText("- OTRO TITULO:");
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 20));
+
+        otrotitulo.setBackground(new java.awt.Color(0, 0, 51));
+        otrotitulo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        otrotitulo.setForeground(new java.awt.Color(102, 102, 102));
+        otrotitulo.setText("TSU EN INVESTIGACIÓN PENAL");
+        jPanel2.add(otrotitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 310, 20));
+
+        jLabel38.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel38.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel38.setOpaque(true);
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 490, 20));
+
+        jLabel39.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel39.setText("- TELEFONO:");
+        jPanel2.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 20));
+
+        telefono.setBackground(new java.awt.Color(0, 0, 51));
+        telefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        telefono.setForeground(new java.awt.Color(102, 102, 102));
+        telefono.setText("04249190376");
+        jPanel2.add(telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 310, 20));
+
+        jLabel41.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel41.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel41.setOpaque(true);
+        jPanel2.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 490, 20));
+
+        jLabel42.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel42.setText("- OTRO TELEFONO:");
+        jPanel2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 20));
+
+        otrotelefono.setBackground(new java.awt.Color(0, 0, 51));
+        otrotelefono.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        otrotelefono.setForeground(new java.awt.Color(102, 102, 102));
+        otrotelefono.setText("04120885926");
+        jPanel2.add(otrotelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 310, 20));
+
+        jLabel44.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel44.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel44.setOpaque(true);
+        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 490, 20));
+
+        jLabel45.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel45.setText("- CORREO:");
+        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 20));
+
+        correo.setBackground(new java.awt.Color(0, 0, 51));
+        correo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        correo.setForeground(new java.awt.Color(102, 102, 102));
+        correo.setText("DIXSONHOEPP@GMAIL.COM");
+        jPanel2.add(correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 310, 20));
+
+        jLabel47.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel47.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel47.setOpaque(true);
+        jPanel2.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 490, 20));
+
+        jLabel48.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel48.setText("- DIRECCIÓN:");
+        jPanel2.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 20));
+
+        jLabel51.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel51.setText("- ESTADO:");
+        jPanel2.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, 20));
+
+        estado.setBackground(new java.awt.Color(0, 0, 51));
+        estado.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        estado.setForeground(new java.awt.Color(102, 102, 102));
+        estado.setText("DELTA AMACURO");
+        jPanel2.add(estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 310, 20));
+
+        jLabel53.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel53.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel53.setOpaque(true);
+        jPanel2.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 490, 20));
+
+        jLabel54.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel54.setText("- MUNICIPIO:");
+        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, 20));
+
+        municipio.setBackground(new java.awt.Color(0, 0, 51));
+        municipio.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        municipio.setForeground(new java.awt.Color(102, 102, 102));
+        municipio.setText("TUCUPITA");
+        jPanel2.add(municipio, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 310, 20));
+
+        jLabel56.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel56.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel56.setOpaque(true);
+        jPanel2.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 490, 20));
+
+        jLabel57.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel57.setText("- PARROQUIA:");
+        jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, 20));
+
+        parroquia.setBackground(new java.awt.Color(0, 0, 51));
+        parroquia.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        parroquia.setForeground(new java.awt.Color(102, 102, 102));
+        parroquia.setText("SAN JOSE");
+        jPanel2.add(parroquia, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 310, 20));
+
+        jLabel59.setBackground(new java.awt.Color(249, 249, 249));
+        jLabel59.setOpaque(true);
+        jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 490, 20));
+
+        direccion.setColumns(20);
+        direccion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        direccion.setForeground(new java.awt.Color(102, 102, 102));
+        direccion.setLineWrap(true);
+        direccion.setRows(5);
+        direccion.setText("CALLE SAN CRISTOBA, CASA 47, AL FRENTE DEL HOTEL SAN CRISTOBAL");
+        direccion.setWrapStyleWord(true);
+        direccion.setBorder(null);
+        direccion.setEnabled(false);
+        jScrollPane2.setViewportView(direccion);
+
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, 310, -1));
+
+        jTabbedPane1.addTab("DATOS PERSONALES", jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        foto2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(foto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 160, 160));
+
+        jLabel60.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel60.setText("- RANGO:");
+        jPanel3.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 20));
+
+        jLabel63.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel63.setText("- FECHA DE INGRESO:");
+        jPanel3.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, 20));
+
+        jLabel66.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel66.setText("- FECHA DE ASCENSO:");
+        jPanel3.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
+
+        jLabel69.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel69.setText("- CODIGO DEL CARNET:");
+        jPanel3.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, 20));
+
+        jLabel71.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel71.setText("- CONDICIÓN:");
+        jPanel3.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, 20));
+
+        jLabel75.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel75.setText("- MUNICIPIO:");
+        jPanel3.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, 20));
+
+        jLabel77.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel77.setText("- TALLA DE CAMISA:");
+        jPanel3.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 20));
+
+        jLabel80.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel80.setText("- TALLA DE PANTALON:");
+        jPanel3.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, 20));
+
+        jLabel83.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel83.setText("- TALLA DE ZAPATO:");
+        jPanel3.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, 20));
+
+        jLabel86.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel86.setText("- TALLA DE GORRA:");
+        jPanel3.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, 20));
+
+        MunicipioTrabajo.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        MunicipioTrabajo.setForeground(new java.awt.Color(102, 102, 102));
+        MunicipioTrabajo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "TUCUPITA", "CASACOIMA", "ANTONIO DIAZ", "PEDERNALES" }));
+        MunicipioTrabajo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        jPanel3.add(MunicipioTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 240, -1));
+
+        TallaPantalon.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TallaPantalon.setForeground(new java.awt.Color(102, 102, 102));
+        TallaPantalon.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        TallaPantalon.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TallaPantalonKeyTyped(evt);
+            }
+        });
+        jPanel3.add(TallaPantalon, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 170, -1));
+
+        Rango.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Rango.setForeground(new java.awt.Color(102, 102, 102));
+        Rango.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OFICIAL", "PRIMER OFICIAL", "OFICIAL JEFE", "INSPECTOR", "PRIMER INSPECTOR", "INSPECTOR JEFE", "COMISARIO", "PRIMER COMISARIO", "COMISARIO JEFE" }));
+        Rango.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        jPanel3.add(Rango, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, 240, -1));
+
+        CodigoCarnet.setForeground(new java.awt.Color(102, 102, 102));
+        CodigoCarnet.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        CodigoCarnet.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                CodigoCarnetKeyReleased(evt);
+            }
+        });
+        jPanel3.add(CodigoCarnet, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, 170, -1));
+
+        TallaZapato.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TallaZapato.setForeground(new java.awt.Color(102, 102, 102));
+        TallaZapato.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        TallaZapato.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TallaZapatoKeyTyped(evt);
+            }
+        });
+        jPanel3.add(TallaZapato, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 170, -1));
+
+        TallaGorra.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TallaGorra.setForeground(new java.awt.Color(102, 102, 102));
+        TallaGorra.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        TallaGorra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TallaGorraKeyTyped(evt);
+            }
+        });
+        jPanel3.add(TallaGorra, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, -1));
+
+        Codicion.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Codicion.setForeground(new java.awt.Color(102, 102, 102));
+        Codicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVO", "ABANDONO", "IVSS", "PERMISO", "VACACIONES", "SUSPENDIDO", "BAJA", "PRIVADO DE LIBERTAD" }));
+        Codicion.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        jPanel3.add(Codicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 240, -1));
+
+        TallaCamisa.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        TallaCamisa.setForeground(new java.awt.Color(102, 102, 102));
+        TallaCamisa.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        TallaCamisa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TallaCamisaKeyReleased(evt);
+            }
+        });
+        jPanel3.add(TallaCamisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 170, -1));
+
+        jLabel76.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        jLabel76.setText("- SERVICIO:");
+        jPanel3.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
+
+        Servicio.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Servicio.setForeground(new java.awt.Color(102, 102, 102));
+        Servicio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "SERVICIO DE INVESTIGACIÓN PENAL (SIP)", "SERVICIO DE VIGILANCIA Y PATRULLAJE", "SERVICIO INTERNO EN LA COMANDANCIA GENERAL" }));
+        Servicio.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        jPanel3.add(Servicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 240, -1));
+
+        FechaAscenso.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        FechaAscenso.setForeground(new java.awt.Color(102, 102, 102));
+        FechaAscenso.setDateFormatString("dd-MM-yyyy");
+        FechaAscenso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jPanel3.add(FechaAscenso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 170, -1));
+
+        FechaIngreso.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        FechaIngreso.setForeground(new java.awt.Color(102, 102, 102));
+        FechaIngreso.setDateFormatString("dd-MM-yyyy");
+        FechaIngreso.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jPanel3.add(FechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 170, -1));
+
+        jTabbedPane1.addTab("DATOS POLICIAL", jPanel3);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        foto3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel4.add(foto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 160, 160));
+
+        jLabel106.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel106.setText("- CUENTA BANCARIA:");
+        jPanel4.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, 20));
+
+        jLabel109.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel109.setText("- BANCO:");
+        jPanel4.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, 20));
+
+        NumeroCuenta.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        NumeroCuenta.setForeground(new java.awt.Color(102, 102, 102));
+        NumeroCuenta.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        NumeroCuenta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NumeroCuentaKeyTyped(evt);
+            }
+        });
+        jPanel4.add(NumeroCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 170, -1));
+
+        Banco.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        Banco.setForeground(new java.awt.Color(102, 102, 102));
+        Banco.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        Banco.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                BancoKeyReleased(evt);
+            }
+        });
+        jPanel4.add(Banco, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 170, -1));
+
+        jLabel143.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jLabel143.setText("- ESTATUS:");
+        jPanel4.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, 20));
+
+        estatus.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        estatus.setForeground(new java.awt.Color(0, 0, 51));
+        estatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CON GOCE DE SUELDO ", "SIN GOCE DE SUELDO", " " }));
+        estatus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(0, 0, 0)));
+        jPanel4.add(estatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 240, -1));
+
+        jTabbedPane1.addTab("NOMINA", jPanel4);
+
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 680, 510));
+
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/img/icons8_no_16px.png"))); // NOI18N
+        salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirMouseClicked(evt);
+            }
+        });
+        jPanel1.add(salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, -1, -1));
+
+        BTN_REGISTRAR.setBackground(new java.awt.Color(102, 102, 102));
+        BTN_REGISTRAR.setForeground(new java.awt.Color(255, 255, 255));
+        BTN_REGISTRAR.setText("REGISTRAR");
+        BTN_REGISTRAR.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        jPanel1.add(BTN_REGISTRAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 610, 160, 30));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 723, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+    int xx, xy;
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        xx = evt.getX();
+        xy = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+
+        this.setLocation(x - xx, y - xy);
+    }//GEN-LAST:event_formMouseDragged
+
+    private void salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_salirMouseClicked
+
+    private void BancoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BancoKeyReleased
+        TextoMayuscula texto = new TextoMayuscula(Banco);
+        texto.keyReleased(evt);
+    }//GEN-LAST:event_BancoKeyReleased
+
+    private void NumeroCuentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NumeroCuentaKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_NumeroCuentaKeyTyped
+
+    private void TallaCamisaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TallaCamisaKeyReleased
+        TextoMayuscula texto = new TextoMayuscula(TallaCamisa);
+        texto.keyReleased(evt);
+    }//GEN-LAST:event_TallaCamisaKeyReleased
+
+    private void TallaGorraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TallaGorraKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TallaGorraKeyTyped
+
+    private void TallaZapatoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TallaZapatoKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TallaZapatoKeyTyped
+
+    private void CodigoCarnetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CodigoCarnetKeyReleased
+        TextoMayuscula texto = new TextoMayuscula(CodigoCarnet);
+        texto.keyReleased(evt);
+    }//GEN-LAST:event_CodigoCarnetKeyReleased
+
+    private void TallaPantalonKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TallaPantalonKeyTyped
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TallaPantalonKeyTyped
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+      
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private view.componentes.BTN BTN_REGISTRAR;
+    private javax.swing.JTextField Banco;
+    private javax.swing.JComboBox<String> Codicion;
+    private javax.swing.JTextField CodigoCarnet;
+    private com.toedter.calendar.JDateChooser FechaAscenso;
+    private com.toedter.calendar.JDateChooser FechaIngreso;
+    private javax.swing.JComboBox<String> MunicipioTrabajo;
+    private javax.swing.JTextField NumeroCuenta;
+    private javax.swing.JComboBox<String> Rango;
+    private javax.swing.JComboBox<String> Servicio;
+    private javax.swing.JTextField TallaCamisa;
+    private javax.swing.JTextField TallaGorra;
+    private javax.swing.JTextField TallaPantalon;
+    private javax.swing.JTextField TallaZapato;
+    private javax.swing.JLabel cedula;
+    private javax.swing.JLabel correo;
+    private javax.swing.JTextArea direccion;
+    private javax.swing.JLabel estado;
+    private javax.swing.JLabel estadocivil;
+    private javax.swing.JComboBox<String> estatus;
+    private javax.swing.JLabel fechanacimiento;
+    private javax.swing.JLabel foto;
+    private javax.swing.JLabel foto2;
+    private javax.swing.JLabel foto3;
+    private javax.swing.JLabel genero;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel109;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lugarnacimiento;
+    private javax.swing.JLabel municipio;
+    private javax.swing.JLabel nivelacademico;
+    private javax.swing.JLabel otrotelefono;
+    private javax.swing.JLabel otrotitulo;
+    private javax.swing.JLabel parroquia;
+    private javax.swing.JLabel primerapellido;
+    private javax.swing.JLabel primernombre;
+    private javax.swing.JLabel salir;
+    private javax.swing.JLabel segundoapellido;
+    private javax.swing.JLabel segundonombre;
+    private javax.swing.JLabel telefono;
+    private javax.swing.JLabel tituloobtenido;
+    // End of variables declaration//GEN-END:variables
+}

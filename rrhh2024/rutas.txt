@@ -1,0 +1,7 @@
+{
+	"host": "localhost",
+	"db": "rrhh",
+	"user": "root",
+	"password": "1234",
+	"foto": "/foto/"
+}
