@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //color de seleccion para todo el sistema
         FlatLaf.setGlobalExtraDefaults(Collections.singletonMap("@accentColor", "#666"));
 
         Thread hilo = new Thread(() -> {
